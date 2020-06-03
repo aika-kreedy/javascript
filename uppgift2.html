@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+        count = 0;
+        roundNum = [];
+        for( var i=1 ; i <=5 ; i++){
+       var userChoice = parseInt(prompt("Do you choose rock=1, paper=2 or scissors=3 ?"));
+       if (userChoice ==1) {
+     userChoice = "rock";
+ } else if(userChoice ==2) {
+     computerChoice = "paper";
+     userChoice="paper";
+ } else {
+    userChoice = "scissors";
+ 
+ }
+        
+var computerChoice = Math.floor(Math.random() * 3) + 1;
+ if (computerChoice ==1) {
+      computerChoice = "rock";
+   } else if(computerChoice==2) {
+     computerChoice = "paper";
+     userChoice="paper";
+      } else {
+     computerChoice = "scissors";
+        
+ }
+
+  
+
+  var compare = function(choice1,choice2) {
+  if (choice1 === choice2) {
+      return "It's a tie!";
+          }
+     if (choice1 === "rock") {
+      if (choice2 === "scissors") {
+                    
+       return "You win!";
+   } else {            
+     return "You lose! Try again.";          
+     }}
+     if (choice1 === "paper") {
+     if (choice2 === "rock") {        
+        return "You win!";
+     } else 
+             
+     return "You lose! Try again.";
+     }
+    if (choice1 === "scissors") {
+     if (choice2 === "rock") {
+                    
+         return "You lose! Try again.";
+     } else {
+                   
+      return "You win!";
+    }}
+  };
+      
+      
+   roundNum[i] = compare();
+    
+   var results = compare(userChoice,computerChoice);
+
+        count++;
+      
+   document.write("Round "+ count +"   " + "<br>"+ results +"<br>");  
+   document.write("Computer chose " + " " + computerChoice );
+   document.write(" and you chose  " + userChoice+"." +"</p>"+"<br>"+ "<hr>");
+  
+
+      }
+    </script>  
+</body>
+</html>
