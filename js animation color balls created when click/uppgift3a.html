@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <canvas id="rityta" width="500" height="600" style="border:1px solid #0c0101"></canvas>
+    <script> 
+   
+
+   var rityta = document.getElementById("rityta");
+ 
+   var ctx = rityta.getContext("2d");
+
+  var colorArray= ["#FF0000","#00FF00","#0000FF","#FF00FF"," #00FFFF","#FFFF00"];
+  var r= [10,15,20,25,30]     
+ 
+  function drawCircle(event){
+   
+ ctx.fillStyle = colorArray[Math.floor(Math.random() * 6)];
+ ctx.beginPath();
+ ctx.arc(event.clientX,event.clientY,r[Math.floor(Math.random()*5)],0,2*Math.PI);
+ ctx.fill();
+ }
+
+ document.addEventListener("click",  drawCircle);
+
+    </script>
+</body>
+</html>

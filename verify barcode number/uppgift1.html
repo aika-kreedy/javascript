@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+
+
+var barcode=prompt("Enter barcode number: ");
+if (barcode.length != 13) {
+     document.write("Barcode is unvalid");
+}
+else{
+     
+  sumEven =parseInt(barcode.charAt(0))+ parseInt(barcode.charAt(2)) + parseInt(barcode.charAt(4)) +parseInt(barcode.charAt(6))+parseInt(barcode.charAt(8))
+  +parseInt(barcode.charAt(10));
+ sumOdd=parseInt( barcode.charAt(1))*3+parseInt( barcode.charAt(3))*3+parseInt( barcode.charAt(5))*3+parseInt( barcode.charAt(7))*3+parseInt( barcode.charAt(9))*3+
+ parseInt( barcode.charAt(11))*3;
+total = sumEven + sumOdd;
+var checkNumber= barcode.slice(-1);
+ var checkTotal = total % 10;
+}
+
+if (checkTotal!= 0) {
+ checkTotal = 10 - checkTotal;
+}
+if (checkTotal != checkNumber) {
+
+     document.write("Barcode Number is Wrong!");
+
+}
+else {
+     document.write("Barcode Number is  Correct!");
+
+}
+
+     </script>
+</body>
+</html>
